@@ -25,7 +25,7 @@ def read_and_transform(config, long_fmt='360'):
     """
 
     var_list = config['vars']
-    data_in = xr.open_dataset(config['filename'])[variables]
+    data_in = xr.open_dataset(config['filename'])[var_list]
     
     if long_fmt == '360':
         data_in = data_in.sel(lon=slice(config['wlon'], config['elon']), 
